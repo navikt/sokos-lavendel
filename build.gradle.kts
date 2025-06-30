@@ -29,6 +29,7 @@ val kotestVersion = "5.9.1"
 val kotlinxSerializationVersion = "1.8.1"
 val mockOAuth2ServerVersion = "2.2.1"
 val mockkVersion = "1.14.4"
+val activemqVersion = "2.41.0"
 
 dependencies {
 
@@ -69,6 +70,7 @@ dependencies {
     testImplementation("io.kotest:kotest-runner-junit5:$kotestVersion")
     testImplementation("io.mockk:mockk:$mockkVersion")
     testImplementation("no.nav.security:mock-oauth2-server:$mockOAuth2ServerVersion")
+    testImplementation("org.apache.activemq:artemis-jakarta-server:$activemqVersion")
 }
 
 // Vulnerability fix because of id("org.jlleitschuh.gradle.ktlint") uses ch.qos.logback:logback-classic:1.3.5
