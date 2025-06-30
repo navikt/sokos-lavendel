@@ -30,6 +30,7 @@ val kotlinxSerializationVersion = "1.8.1"
 val mockOAuth2ServerVersion = "2.2.1"
 val mockkVersion = "1.14.4"
 val activemqVersion = "2.41.0"
+val ibmmqVersion = "9.4.3.0"
 
 dependencies {
 
@@ -63,6 +64,9 @@ dependencies {
 
     // Config
     implementation("com.natpryce:konfig:$natpryceVersion")
+
+    implementation("jakarta.jms:jakarta.jms-api:3.1.0")
+    implementation("com.ibm.mq:com.ibm.mq.jakarta.client:$ibmmqVersion")
 
     // Test
     testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")

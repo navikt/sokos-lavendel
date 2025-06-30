@@ -57,6 +57,14 @@ object PropertiesConfig {
         val wellKnownUrl: String = getOrEmpty("AZURE_APP_WELL_KNOWN_URL"),
     )
 
+    data class MQProperties(
+        val hostname: String = get("MQ_HOSTNAME"),
+        val port: Int = get("MQ_PORT").toInt(),
+        val mqQueueManagerName: String = get("MQ_QUEUE_MANAGER_NAME"),
+        val mqChannelName: String = getOrEmpty("MQ_CHANNEL_NAME"),
+        val userAuth: Boolean = true,
+    )
+
     enum class Profile {
         LOCAL,
         DEV,
