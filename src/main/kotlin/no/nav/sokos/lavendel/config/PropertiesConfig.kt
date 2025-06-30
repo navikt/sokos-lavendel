@@ -63,6 +63,7 @@ object PropertiesConfig {
         val mqQueueManagerName: String = get("MQ_QUEUE_MANAGER_NAME"),
         val mqChannelName: String = getOrEmpty("MQ_CHANNEL_NAME"),
         val userAuth: Boolean = true,
+        val bestilleSkattekortQueueName: String = "bestille-skattekort",
     )
 
     enum class Profile {
