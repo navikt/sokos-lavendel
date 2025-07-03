@@ -5,12 +5,13 @@ import io.ktor.server.auth.authenticate
 import io.ktor.server.routing.Route
 import io.ktor.server.routing.routing
 
-fun Application.routingConfig(
-    useAuthentication: Boolean,
-    applicationState: ApplicationState,
-) {
+import no.nav.sokos.lavendel.config
+
+fun Application.routingConfig(applicationState: ApplicationState) {
     routing {
         internalNaisRoutes(applicationState)
+        authenticate(config().securityProperties.useAuthentication, AUTHENTICATION_NAME) {
+        }
     }
 }
 
