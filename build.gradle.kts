@@ -47,6 +47,8 @@ val kotestVersion = "5.9.1"
 val kotlinxSerializationVersion = "1.8.1"
 val mockOAuth2ServerVersion = "2.2.1"
 val mockkVersion = "1.14.4"
+val activemqVersion = "2.41.0"
+val ibmmqVersion = "9.4.3.0"
 val hikariVersion = "6.3.0"
 val kotliqueryVersion = "1.9.1"
 val testcontainersVersion = "1.21.1"
@@ -96,6 +98,9 @@ dependencies {
     implementation("com.natpryce:konfig:$natpryceVersion")
     implementation("no.nav:vault-jdbc:$vaultVersion")
 
+    implementation("jakarta.jms:jakarta.jms-api:3.1.0")
+    implementation("com.ibm.mq:com.ibm.mq.jakarta.client:$ibmmqVersion")
+
     // Test
     testImplementation("io.ktor:ktor-server-test-host-jvm:$ktorVersion")
     testImplementation("io.kotest:kotest-assertions-core-jvm:$kotestVersion")
@@ -105,6 +110,7 @@ dependencies {
     testImplementation("no.nav.security:mock-oauth2-server:$mockOAuth2ServerVersion")
     testImplementation("io.kotest.extensions:kotest-extensions-testcontainers:2.0.2")
     testImplementation("org.testcontainers:postgresql:$testcontainersVersion")
+    testImplementation("org.apache.activemq:artemis-jakarta-server:$activemqVersion")
 }
 
 // Vulnerability fix because of id("org.jlleitschuh.gradle.ktlint") uses ch.qos.logback:logback-classic:1.3.5
